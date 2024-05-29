@@ -16,6 +16,8 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddScoped<IProviderService, ProviderService>();
 builder.Services.AddScoped<IProviderRepository, ProviderRepository>();
+builder.Services.AddScoped<IServicesService, ServicesService>();
+builder.Services.AddScoped<IServicesRepository, ServicesRepository>();
 
 // Add services to the container.
 
