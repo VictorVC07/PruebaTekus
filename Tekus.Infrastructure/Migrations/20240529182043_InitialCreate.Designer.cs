@@ -11,7 +11,7 @@ using Tekus.Infrastructure.Data;
 namespace Tekus.Infrastructure.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240529154414_InitialCreate")]
+    [Migration("20240529182043_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -77,6 +77,9 @@ namespace Tekus.Infrastructure.Migrations
                     b.Property<int>("Country_idcountry")
                         .HasColumnType("int");
 
+                    b.Property<float>("time_value")
+                        .HasColumnType("real");
+
                     b.HasKey("Providers_idprovider", "Services_idservice", "Country_idcountry");
 
                     b.HasIndex("Country_idcountry");
@@ -97,9 +100,6 @@ namespace Tekus.Infrastructure.Migrations
                     b.Property<string>("service")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<float>("time_value")
-                        .HasColumnType("real");
 
                     b.HasKey("idservice");
 

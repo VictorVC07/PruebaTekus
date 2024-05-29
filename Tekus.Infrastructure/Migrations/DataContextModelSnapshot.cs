@@ -74,6 +74,9 @@ namespace Tekus.Infrastructure.Migrations
                     b.Property<int>("Country_idcountry")
                         .HasColumnType("int");
 
+                    b.Property<float>("time_value")
+                        .HasColumnType("real");
+
                     b.HasKey("Providers_idprovider", "Services_idservice", "Country_idcountry");
 
                     b.HasIndex("Country_idcountry");
@@ -94,9 +97,6 @@ namespace Tekus.Infrastructure.Migrations
                     b.Property<string>("service")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<float>("time_value")
-                        .HasColumnType("real");
 
                     b.HasKey("idservice");
 

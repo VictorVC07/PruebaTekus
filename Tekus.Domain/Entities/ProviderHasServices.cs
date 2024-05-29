@@ -11,6 +11,7 @@ namespace Tekus.Domain.Entities
 
         public int Country_idcountry { get; set; }
         public Country Country { get; set; }
+        public float time_value { get; set; }
 
     }
 }

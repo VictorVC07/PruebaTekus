@@ -44,8 +44,7 @@ namespace Tekus.Infrastructure.Migrations
                 {
                     idservice = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    service = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    time_value = table.Column<float>(type: "real", nullable: false)
+                    service = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,7 +57,8 @@ namespace Tekus.Infrastructure.Migrations
                 {
                     Providers_idprovider = table.Column<int>(type: "int", nullable: false),
                     Services_idservice = table.Column<int>(type: "int", nullable: false),
-                    Country_idcountry = table.Column<int>(type: "int", nullable: false)
+                    Country_idcountry = table.Column<int>(type: "int", nullable: false),
+                    time_value = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
                 {

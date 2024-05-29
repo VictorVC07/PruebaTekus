@@ -42,6 +42,10 @@ namespace Tekus.Infrastructure.Data
                 .WithMany(p => p.ProviderHasServices)
                 .HasForeignKey(ps => ps.Country_idcountry)
                 .OnDelete(DeleteBehavior.Cascade);// Configurar comportamiento de eliminación en cascada
+
+
+            modelBuilder.Entity<ProviderHasServices>()
+                .Property(e => e.time_value).IsRequired();
         }
     }
 }

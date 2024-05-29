@@ -13,8 +13,6 @@ namespace Tekus.Domain.Entities
         [Required]
         public string service { get; set; }
 
-        [Required]
-        public float time_value { get; set; }
-        public ICollection<ProviderHasServices> ProviderHasServices { get; set; }
+        public List<ProviderHasServices> ProviderHasServices { get; set; } = new List<ProviderHasServices>();
     }
 }

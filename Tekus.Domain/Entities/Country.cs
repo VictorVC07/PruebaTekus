@@ -9,6 +9,6 @@ namespace Tekus.Domain.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idcountry { get; set; }
         public string country { get; set; }
-        public ICollection<ProviderHasServices> ProviderHasServices { get; set; }
+        public List<ProviderHasServices> ProviderHasServices { get; set; } = new List<ProviderHasServices>();
     }
 }

@@ -17,7 +17,7 @@ namespace Tekus.Domain.Entities
 
         [Required]
         public string mail { get; set; }
-        public ICollection<ProviderHasServices> ProviderHasServices { get; set; }
+        public List<ProviderHasServices> ProviderHasServices { get; set; } = new List<ProviderHasServices>();
 
     }
 }
