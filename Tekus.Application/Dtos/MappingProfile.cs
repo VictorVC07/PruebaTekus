@@ -53,6 +53,12 @@ namespace Tekus.Application.Dtos
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.idcountry))
                 .ForMember(dest => dest.Country, opt => opt.MapFrom(src => src.country))
                 .ReverseMap();
+
+            // Mapping for ProviderCountryDto and Country
+            CreateMap<ProviderCountryDto, Country>()
+                .ForMember(dest => dest.idcountry, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.country, opt => opt.MapFrom(src => src.Country))
+                .ReverseMap();
         }
     }
 }

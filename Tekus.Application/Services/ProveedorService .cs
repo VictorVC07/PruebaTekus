@@ -37,5 +37,10 @@ namespace Tekus.Application.Services
             await _providerRepository.AddAsync(provider);
             return _mapper.Map<ProviderDto>(provider);
         }
+
+        public async Task<IDictionary<string, int>> GetProviderCountByCountryAsync()
+        {
+            return await _providerRepository.GetProviderCountByCountryAsync();
+        }
     }
 }

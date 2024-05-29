@@ -25,5 +25,11 @@ namespace Tekus.Infrastructure.Repositories
                 .ToListAsync();
         }
 
+        public async Task AddAsync(Services service)
+        {
+            _context.Services.Add(service);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

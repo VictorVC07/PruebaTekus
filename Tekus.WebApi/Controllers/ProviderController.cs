@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Tekus.Application.Dtos;
 using Tekus.Application.Interfaces;
-using Tekus.Domain.Entities;
-using System.Threading.Tasks;
 
 namespace Tekus.WebApi.Controllers
 {
@@ -46,5 +44,11 @@ namespace Tekus.WebApi.Controllers
             return CreatedAtAction(nameof(GetProviderById), new { id = provider.Id }, provider);
         }
 
+        [HttpGet("provider-count-by-country")]
+        public async Task<IActionResult> GetProviderCountByCountry()
+        {
+            var providerCounts = await _providerService.GetProviderCountByCountryAsync();
+            return Ok(providerCounts);
+        }
     }
 }

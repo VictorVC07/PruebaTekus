@@ -33,5 +33,13 @@ namespace Tekus.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<IDictionary<string, int>> GetProviderCountByCountryAsync()
+        {
+            return await _context.Providers_has_Services
+                .GroupBy(ps => ps.Country.country)
+                .Select(g => new { Country = g.Key, Count = g.Select(ps => ps.Providers_idprovider).Distinct().Count() })
+                .ToDictionaryAsync(x => x.Country, x => x.Count);
+        }
+
     }
 }
