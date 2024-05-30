@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "3a86ca83-4242-4c13-86ea-a91522037f03",
+		"name": "PruebaTekus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6343731",
+		"_collection_link": "https://gold-space-49667.postman.co/workspace/Rutraport-Api~56edbecb-b7ee-477f-846f-4f4156d8d892/collection/6343731-3a86ca83-4242-4c13-86ea-a91522037f03?action=share&source=collection_link&creator=6343731"
+	},
+	"item": [
+		{
+			"name": "Providers",
+			"item": [
+				{
+					"name": "GetProvider",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZWt1cyIsImV4cCI6MTcxNzA0NTY3Mn0.gsBit51hyc0yOGt5inYfOocJYxI0At7Wft3ccNRlneI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7034/api/Provider",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7034",
+							"path": [
+								"api",
+								"Provider"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProviderById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZWt1cyIsImV4cCI6MTcxNzA0NTY3Mn0.gsBit51hyc0yOGt5inYfOocJYxI0At7Wft3ccNRlneI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7034/api/Provider/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7034",
+							"path": [
+								"api",
+								"Provider",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProviderCountByCountry",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZWt1cyIsImV4cCI6MTcxNzA0NTY3Mn0.gsBit51hyc0yOGt5inYfOocJYxI0At7Wft3ccNRlneI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7034/api/Provider/provider-count-by-country",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7034",
+							"path": [
+								"api",
+								"Provider",
+								"provider-count-by-country"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "GetService",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZWt1cyIsImV4cCI6MTcxNzA0NTY3Mn0.gsBit51hyc0yOGt5inYfOocJYxI0At7Wft3ccNRlneI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7034/api/Service",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7034",
+							"path": [
+								"api",
+								"Service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetServiceCountByCountry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZWt1cyIsImV4cCI6MTcxNzA0NTY3Mn0.gsBit51hyc0yOGt5inYfOocJYxI0At7Wft3ccNRlneI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7034/api/Service/service-count-by-country",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7034",
+							"path": [
+								"api",
+								"Service",
+								"service-count-by-country"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateService",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZWt1cyIsImV4cCI6MTcxNzAzNDgzN30.AkURiRXw-BJsxyYZjMKtsmoU5T4bl7x6V5YGDigXHSE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 0,\r\n  \"name\": \"ejemplo33333\",\r\n  \"providers\": [\r\n    {\r\n      \"id\": 0,\r\n      \"nit\": \"0000000\",\r\n      \"name\": \"proveedor3\",\r\n      \"mail\": \"p3@gmail.com\",\r\n      \"countries\": [\r\n        {\r\n          \"id\": 0,\r\n          \"country\": \"VENEZUELA\",\r\n          \"valueTime\": 400000\r\n        },\r\n        {\r\n          \"id\": 0,\r\n          \"country\": \"BRASIL\",\r\n          \"valueTime\": 650000\r\n        }\r\n      ]\r\n    },\r\n    {\r\n        \"id\": 0,\r\n        \"nit\": \"09876789\",\r\n        \"name\": \"proveedor6\",\r\n        \"mail\": \"p6@gmail.com\",\r\n        \"countries\": [\r\n          {\r\n            \"id\": 0,\r\n            \"country\": \"ARGENTINA\",\r\n            \"valueTime\": 150000\r\n          }\r\n        ]\r\n      }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7034/api/Service",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7034",
+							"path": [
+								"api",
+								"Service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ServiceUpdate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZWt1cyIsImV4cCI6MTcxNzA0NTY3Mn0.gsBit51hyc0yOGt5inYfOocJYxI0At7Wft3ccNRlneI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 5,\r\n  \"name\": \"LAVAR22\",\r\n  \"providers\": [\r\n    {\r\n      \"id\": 3,\r\n      \"nit\": \"222222222222\",\r\n      \"name\": \"MAXUTECH\",\r\n      \"mail\": \"maxu@gmail.com\",\r\n      \"countries\": [\r\n        {\r\n          \"id\": 3,\r\n          \"country\": \"Mexico\",\r\n          \"valueTime\": 230400\r\n        },\r\n        {\r\n          \"id\": 2,\r\n          \"country\": \"Paraguay\",\r\n          \"valueTime\": 20000\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7034/api/Service",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7034",
+							"path": [
+								"api",
+								"Service"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": \"tekus\",\r\n  \"password\": \"12345\"\r\n}"
+						},
+						"url": {
+							"raw": "https://localhost:7034/login",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7034",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
