@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tekus.Application", "Tekus.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tekus.Domain", "Tekus.Domain\Tekus.Domain.csproj", "{EDD9BBC1-ADC7-4CC1-A82E-4D41DB372446}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tekus.Infrastructure", "Tekus.Infrastructure\Tekus.Infrastructure.csproj", "{65966750-DD7C-4252-A0BB-8A0CE529108C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tekus.Infrastructure", "Tekus.Infrastructure\Tekus.Infrastructure.csproj", "{65966750-DD7C-4252-A0BB-8A0CE529108C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tekus.Tests", "Tekus.Tests\Tekus.Tests.csproj", "{F3B174E4-3DAB-4210-8ADD-29DD9060507D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{65966750-DD7C-4252-A0BB-8A0CE529108C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65966750-DD7C-4252-A0BB-8A0CE529108C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65966750-DD7C-4252-A0BB-8A0CE529108C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3B174E4-3DAB-4210-8ADD-29DD9060507D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B174E4-3DAB-4210-8ADD-29DD9060507D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B174E4-3DAB-4210-8ADD-29DD9060507D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B174E4-3DAB-4210-8ADD-29DD9060507D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
