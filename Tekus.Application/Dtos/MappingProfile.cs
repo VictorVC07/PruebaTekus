@@ -18,19 +18,19 @@ namespace Tekus.Application.Dtos
                 .ForMember(dest => dest.Nit, opt => opt.MapFrom(src => src.nit))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.name))
                 .ForMember(dest => dest.Mail, opt => opt.MapFrom(src => src.mail))
-                .ForMember(dest => dest.Countries, opt => opt.MapFrom(src => src.ProviderHasServices.Select(phs => new ProviderCountryDto
+                .ForMember(dest => dest.Countries, opt => opt.MapFrom(src => src.ProviderHasServices != null ? src.ProviderHasServices.Select(phs => new ProviderCountryDto
                 {
                     Id = phs.Country.idcountry,
                     Country = phs.Country.country,
                     ValueTime = phs.time_value
-                }).ToList()))
+                }).ToList() : new List<ProviderCountryDto>()))
                 .ReverseMap();
 
             // Mapping for Services and ServicesDto
             CreateMap<Domain.Entities.Services, ServiceDto>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.idservice))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.service))
-                .ForMember(dest => dest.Providers, opt => opt.MapFrom(src => src.ProviderHasServices
+                .ForMember(dest => dest.Providers, opt => opt.MapFrom(src => src.ProviderHasServices != null ? src.ProviderHasServices
                     .GroupBy(phs => phs.Provider)
                     .Select(g => new ProviderDto
                     {
@@ -44,7 +44,7 @@ namespace Tekus.Application.Dtos
                             Country = phs.Country.country,
                             ValueTime = phs.time_value
                         }).ToList()
-                    }).ToList()))
+                    }).ToList() : new List<ProviderDto>()))
                 .ReverseMap();
 
 

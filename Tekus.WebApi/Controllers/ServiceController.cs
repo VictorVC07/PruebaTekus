@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Tekus.Application.Dtos;
 using Tekus.Application.Interfaces;
-using Tekus.Domain.Entities;
 
 namespace Tekus.WebApi.Controllers
 {
@@ -34,6 +33,25 @@ namespace Tekus.WebApi.Controllers
 
             var createdService = await _servicesService.CreateServiceAsync(serviceDto);
             return CreatedAtAction(nameof(ListServices), new { id = createdService.Id }, createdService);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] ServiceDto ServiceDto)
+        {
+            if (ServiceDto == null)
+            {
+                return BadRequest();
+            }
+
+            try
+            {
+                var updatedService = await _servicesService.UpdateServiceAsync(ServiceDto);
+                return Ok(updatedService);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         [HttpGet("service-count-by-country")]

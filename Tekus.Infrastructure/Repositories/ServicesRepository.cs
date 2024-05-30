@@ -31,5 +31,20 @@ namespace Tekus.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<Services> GetByIdAsync(int id)
+        {
+            return await _context.Services
+                .Include(s => s.ProviderHasServices)
+                .ThenInclude(ps => ps.Provider)
+                .Include(s => s.ProviderHasServices)
+                .ThenInclude(ps => ps.Country)
+                .FirstOrDefaultAsync(s => s.idservice == id);
+        }
+
+        public async Task UpdateAsync(Services service)
+        {
+            _context.Entry(service).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+        }
     }
 }

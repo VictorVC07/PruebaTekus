@@ -6,6 +6,9 @@ namespace Tekus.Domain.Interfaces
     {
         Task AddAsync(Services service);
         Task<IEnumerable<Services>> GetAllAsync();
+        Task<Services> GetByIdAsync(int id);
+        Task UpdateAsync(Services service);
+
 
     }
 

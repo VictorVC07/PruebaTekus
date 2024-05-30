@@ -9,13 +9,18 @@ namespace Tekus.Application.Services
     public class ServicesService : IServicesService
     {
         private readonly IServicesRepository _servicesRepository;
+        private readonly IProviderRepository _providerRepository;
+        private readonly ICountryRepository _countryRepository;
         private readonly IMapper _mapper;
 
 
-        public ServicesService(IServicesRepository servicesRepository, IMapper mapper)
+        public ServicesService(IServicesRepository servicesRepository, IMapper mapper,
+            IProviderRepository providerRepository, ICountryRepository countryRepository)
         {
             _servicesRepository = servicesRepository;
             _mapper = mapper;
+            _providerRepository = providerRepository;
+            _countryRepository = countryRepository;
         }
 
         public async Task<IEnumerable<ServiceDto>> GetAllServicesAsync()
@@ -45,6 +50,67 @@ namespace Tekus.Application.Services
             }
 
             await _servicesRepository.AddAsync(service);
+            return _mapper.Map<ServiceDto>(service);
+        }
+
+        public async Task<ServiceDto> UpdateServiceAsync(ServiceDto serviceDto)
+        {
+            var service = await _servicesRepository.GetByIdAsync(serviceDto.Id);
+            if (service == null)
+            {
+                throw new KeyNotFoundException($"Service with ID {serviceDto.Id} not found.");
+            }
+
+            service.service = serviceDto.Name;
+            service.ProviderHasServices.Clear();
+
+            foreach (var providerDto in serviceDto.Providers)
+            {
+                var provider = await _providerRepository.GetByIdAsync(providerDto.Id);
+                if (provider == null)
+                {
+                    provider = new Provider
+                    {
+                        idprovider = providerDto.Id,
+                        nit = providerDto.Nit,
+                        name = providerDto.Name,
+                        mail = providerDto.Mail
+                    };
+                }
+                else
+                {
+                    provider.nit = providerDto.Nit;
+                    provider.name = providerDto.Name;
+                    provider.mail = providerDto.Mail;
+                }
+
+
+                foreach (var countryDto in providerDto.Countries)
+                {
+                    var country = await _countryRepository.GetByIdAsync(countryDto.Id);
+                    if (country == null)
+                    {
+                        throw new KeyNotFoundException($"Country with ID {countryDto.Id} not found.");
+                    }
+
+                   
+                    var providerHasService = new ProviderHasServices
+                    {
+                        Provider = provider,
+                        Country = country,
+                        time_value = countryDto.ValueTime,
+                        Providers_idprovider = provider.idprovider,
+                        Services_idservice = service.idservice,
+                        Country_idcountry = country.idcountry
+                    };
+
+                    service.ProviderHasServices.Add(providerHasService);
+
+                    
+                }
+
+            }
+            await _servicesRepository.UpdateAsync(service);
             return _mapper.Map<ServiceDto>(service);
         }
 

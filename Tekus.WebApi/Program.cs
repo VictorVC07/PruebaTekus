@@ -18,6 +18,7 @@ builder.Services.AddScoped<IProviderService, ProviderService>();
 builder.Services.AddScoped<IProviderRepository, ProviderRepository>();
 builder.Services.AddScoped<IServicesService, ServicesService>();
 builder.Services.AddScoped<IServicesRepository, ServicesRepository>();
+builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 
 // Add services to the container.
 

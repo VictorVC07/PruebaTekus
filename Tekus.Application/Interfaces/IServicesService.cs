@@ -10,6 +10,6 @@ namespace Tekus.Application.Interfaces
 
         Task<ServiceDto> CreateServiceAsync(ServiceDto serviceDto);
         Task<IDictionary<string, int>> GetServiceCountByCountryAsync();
-
+        Task<ServiceDto> UpdateServiceAsync(ServiceDto serviceDto);
     }
 }

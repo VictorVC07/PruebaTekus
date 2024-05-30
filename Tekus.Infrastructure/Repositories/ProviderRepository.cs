@@ -22,8 +22,6 @@ namespace Tekus.Infrastructure.Repositories
         public async Task<Provider> GetByIdAsync(int id)
         {
             return await _context.Providers
-                .Include(p => p.ProviderHasServices)
-                    .ThenInclude(ps => ps.Services)
                 .FirstOrDefaultAsync(p => p.idprovider == id);
         }
 
