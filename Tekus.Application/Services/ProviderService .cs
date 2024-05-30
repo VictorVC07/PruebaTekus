@@ -30,14 +30,6 @@ namespace Tekus.Application.Services
             var provider = await _providerRepository.GetByIdAsync(id);
             return _mapper.Map<ProviderDto>(provider);
         }
-
-        public async Task<ProviderDto> CreateProviderAsync(ProviderDto providerDto)
-        {
-            var provider = _mapper.Map<Provider>(providerDto);
-            await _providerRepository.AddAsync(provider);
-            return _mapper.Map<ProviderDto>(provider);
-        }
-
         public async Task<IDictionary<string, int>> GetProviderCountByCountryAsync()
         {
             return await _providerRepository.GetProviderCountByCountryAsync();

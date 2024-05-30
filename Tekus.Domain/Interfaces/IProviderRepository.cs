@@ -6,7 +6,6 @@ namespace Tekus.Domain.Interfaces
     {
         Task<IEnumerable<Provider>> GetAllAsync();
         Task<Provider> GetByIdAsync(int id);
-        Task AddAsync(Provider provider);
         Task<IDictionary<string, int>> GetProviderCountByCountryAsync();
     }
 }

@@ -25,12 +25,6 @@ namespace Tekus.Infrastructure.Repositories
                 .FirstOrDefaultAsync(p => p.idprovider == id);
         }
 
-        public async Task AddAsync(Provider proveedor)
-        {
-            await _context.Providers.AddAsync(proveedor);
-            await _context.SaveChangesAsync();
-        }
-
         public async Task<IDictionary<string, int>> GetProviderCountByCountryAsync()
         {
             return await _context.Providers_has_Services

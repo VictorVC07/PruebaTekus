@@ -33,17 +33,6 @@ namespace Tekus.WebApi.Controllers
             return Ok(proveedor);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateProvider([FromBody] ProviderDto providerDto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            var provider = await _providerService.CreateProviderAsync(providerDto);
-            return CreatedAtAction(nameof(GetProviderById), new { id = provider.Id }, provider);
-        }
-
         [HttpGet("provider-count-by-country")]
         public async Task<IActionResult> GetProviderCountByCountry()
         {
