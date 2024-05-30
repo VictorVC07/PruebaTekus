@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Tekus.Application.Dtos;
 using Tekus.Application.Interfaces;
 
 namespace Tekus.WebApi.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ProviderController : ControllerBase
@@ -14,7 +16,7 @@ namespace Tekus.WebApi.Controllers
         {
             _providerService = providerService;
         }
-
+        
         [HttpGet]
         public async Task<IActionResult> GetProviders()
         {
