@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Tekus.Application.Dtos;
 using Tekus.Application.Interfaces;
-using Tekus.Domain.Entities;
 using Tekus.Domain.Interfaces;
 
 

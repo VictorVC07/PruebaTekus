@@ -29,7 +29,7 @@ namespace Tekus.Application.Services
             return null;
         }
 
-        private string GenerateJWT()
+        public string GenerateJWT()
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:secretPassword"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
