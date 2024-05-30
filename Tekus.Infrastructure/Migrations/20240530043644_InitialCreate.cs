@@ -2,6 +2,8 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Tekus.Infrastructure.Migrations
 {
     /// <inheritdoc />
@@ -81,6 +83,74 @@ namespace Tekus.Infrastructure.Migrations
                         principalTable: "Services",
                         principalColumn: "idservice",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Countries",
+                columns: new[] { "idcountry", "country" },
+                values: new object[,]
+                {
+                    { 1, "Colombia" },
+                    { 2, "United States" },
+                    { 3, "Canada" },
+                    { 4, "Mexico" },
+                    { 5, "Brazil" },
+                    { 6, "Argentina" },
+                    { 7, "Chile" },
+                    { 8, "Peru" },
+                    { 9, "Venezuela" },
+                    { 10, "Uruguay" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Providers",
+                columns: new[] { "idprovider", "mail", "name", "nit" },
+                values: new object[,]
+                {
+                    { 1, "tecnisoft@gmail.com", "Tecnisoft", "900123456-1" },
+                    { 2, "servitech@yahoo.com", "ServiTech", "900234567-2" },
+                    { 3, "solucionesit@hotmail.com", "Soluciones IT", "900345678-3" },
+                    { 4, "digitalware@gmail.com", "DigitalWare", "900456789-4" },
+                    { 5, "techpro@yahoo.com", "TechPro", "900567890-5" },
+                    { 6, "infotech@hotmail.com", "InfoTech", "900678901-6" },
+                    { 7, "cybersoft@gmail.com", "CyberSoft", "900789012-7" },
+                    { 8, "compunet@yahoo.com", "CompuNet", "900890123-8" },
+                    { 9, "netsolutions@hotmail.com", "NetSolutions", "900901234-9" },
+                    { 10, "softtech@gmail.com", "SoftTech", "900012345-0" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Services",
+                columns: new[] { "idservice", "service" },
+                values: new object[,]
+                {
+                    { 1, "Mantenimiento de PC" },
+                    { 2, "Instalación de Software" },
+                    { 3, "Soporte Técnico Remoto" },
+                    { 4, "Consultoría IT" },
+                    { 5, "Desarrollo de Software" },
+                    { 6, "Seguridad Informática" },
+                    { 7, "Hosting y Dominios" },
+                    { 8, "Diseño Web" },
+                    { 9, "Redes y Telecomunicaciones" },
+                    { 10, "Backup y Recuperación" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Providers_has_Services",
+                columns: new[] { "Country_idcountry", "Providers_idprovider", "Services_idservice", "time_value" },
+                values: new object[,]
+                {
+                    { 1, 1, 1, 100000f },
+                    { 2, 1, 2, 150000f },
+                    { 3, 2, 3, 200000f },
+                    { 4, 3, 4, 250000f },
+                    { 5, 4, 5, 300000f },
+                    { 6, 5, 6, 350000f },
+                    { 7, 6, 7, 400000f },
+                    { 8, 7, 8, 450000f },
+                    { 9, 8, 9, 500000f },
+                    { 10, 9, 10, 550000f }
                 });
 
             migrationBuilder.CreateIndex(
